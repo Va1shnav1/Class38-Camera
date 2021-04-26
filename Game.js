@@ -32,7 +32,7 @@ class Game{
     }
     play(){
         form.hide();
-        text("Game Start", 150, 150);
+        //text("Game Start", 150, 150);
         Player.getPlayerInfo();
         if(allPlayers!== undefined){
             var carX = 0;
@@ -40,17 +40,17 @@ class Game{
             var index = 0;
             //for(var plr= 0; plr<allPlayers.length;plr++)
             for(var plr in allPlayers ){
-                carY=displayHeight-allPlayers[plr].distance;
+                carY=displayHeight-allPlayers[plr].Distance;
                 carX=carX+400;
                 index = index+1;
                 console.log("carX"+ carX);
                 console.log("carY"+ carY);
                 cars[index-1].x=carX;
                 cars[index-1].y=carY;
-                if(index==="Player"+player.index){
+                if(index===player.index){
                     cars[index-1].shapeColor="red";
                     camera.position.x=displayWidth/2;
-                    camer.position.y=cars[index-1].y;
+                    camera.position.y=cars[index-1].y;
                 }else{
                     cars[index-1].shapeColor="black";
                 }
